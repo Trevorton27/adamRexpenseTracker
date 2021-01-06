@@ -1,151 +1,164 @@
 :root {
-    --app-theme-color-back: null;
-    --app-theme-color-back-secondary: null;
-    --app-theme-color-text: null;
-    --app-theme-color-table-row-1: null;
-    --app-theme-color-table-row-2: null;
-    --app-theme-color-table-button: null;
+  --app-theme-color-back: null;
+  --app-theme-color-back-secondary: null;
+  --app-theme-color-text: null;
+  --app-theme-color-table-row-1: null;
+  --app-theme-color-table-row-2: null;
+  --app-theme-color-table-button: null;
 }
 
 .App {
-    background-image: linear-gradient(
-        120deg,
-        var(--app-theme-color-back) 0%,
-        var(--app-theme-color-back-secondary) 100%
-    );
+  background-image: linear-gradient(
+    120deg,
+    var(--app-theme-color-back) 0%,
+    var(--app-theme-color-back-secondary) 100%
+  );
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-    background-image: linear-gradient(
-        120deg,
-        var(--app-theme-color-back) 0%,
-        var(--app-theme-color-back-secondary) 100%
-    );
-    /* background-image: linear-gradient(120deg, #cccccc 0%, #998686 100%); */
-    color: rgb(121, 121, 121);
-    font-family: "Poppins", sans-serif;
-    min-height: 100vh;
+  background-image: linear-gradient(
+    120deg,
+    var(--app-theme-color-back) 0%,
+    var(--app-theme-color-back-secondary) 100%
+  );
+  /* background-image: linear-gradient(120deg, #cccccc 0%, #998686 100%); */
+  color: rgb(121, 121, 121);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
 }
 
 header {
-    margin-top: 2em;
+  margin-top: 5em;
+  margin-bottom: 3em;
 }
 
 h1 {
-    color: var(--app-theme-color-text);
+  color: var(--app-theme-color-text);
 }
 
 header {
-    min-height: 7vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 form {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    justify-content: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  margin-top: 6vh;
+}
+#form-row-one {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-items: center;
+}
+#form-row-two {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
 }
 
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    align-items: center;
+#addExpenseButton {
+  margin-top: 6vh;
+  margin-bottom: 6vh;
 }
 
 select,
 form input,
 form button {
-    padding: 0.5rem;
-    font-size: 2rem;
-    border: none;
-    font-size: medium;
-    color: red;
-    color: darkgray;
-    background: rgb(255, 255, 255);
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  font-size: medium;
+  color: red;
+  color: darkgray;
+  background: rgb(255, 255, 255);
 }
 
 form button {
-    color: #e0e0e0;
-    min-height: 5vh;
-    margin: 1em;
-    background: #3f4363;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  color: #e0e0e0;
+  min-height: 5vh;
+  margin: 1em;
+  background: #3f4363;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 form button:hover {
-    background: #d4d4d4;
-    color: white;
+  background: #d4d4d4;
+  color: white;
 }
 
 .expense-container {
-    display: flex;
-    margin-top: 1em;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  margin-top: 1em;
+  justify-content: center;
+  align-items: center;
 }
 
 .table {
-    width: 20vh;
-    color: var(--app-theme-color-text);
+  width: 20vh;
+  color: var(--app-theme-color-text);
+  margin-top: 5vh;
 }
 /* need */
 th {
-    min-width: 20vh;
-    place-self: center;
-    text-align: center;
-    border-bottom: var(--app-theme-color-text) 1px solid;
-    padding-bottom: 0.5em;
+  min-width: 20vh;
+  place-self: center;
+  text-align: center;
+  border-bottom: var(--app-theme-color-text) 1px solid;
+  padding-bottom: 0.5em;
 }
 
 td {
-    place-self: center;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
+  place-self: center;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
 }
 
 tr:nth-child(odd) {
-    font-style: italic;
-    background-color: var(--app-theme-color-table-row-1);
+  font-style: italic;
+  background-color: var(--app-theme-color-table-row-1);
 }
 tr:nth-child(even) {
-    font-style: italic;
+  font-style: italic;
 
-    background-color: var(--app-theme-color-table-row-2);
+  background-color: var(--app-theme-color-table-row-2);
 }
 
 .input-expense {
-    margin: 1em;
-    width: 25vh;
-    font-size: 1rem;
-    display: flex;
-    padding: 1rem;
+  margin: 1em;
+  width: 25vh;
+  font-size: 1rem;
+  display: flex;
+  padding: 1rem;
 }
 
 .myButtons {
-    color: white;
-    background: var(--app-theme-color-table-button);
+  color: white;
+  background: var(--app-theme-color-table-button);
 }
 
 .myButtons:hover {
-    background: var(--app-theme-color-table-button);
+  background: var(--app-theme-color-table-button);
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    outline: 0;
-    box-shadow: none;
-    /* border: 0 !important; */
-    background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  /* border: 0 !important; */
+  background-image: none;
 }

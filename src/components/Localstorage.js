@@ -1,20 +1,19 @@
 import React, { useEffect } from 'react';
 
 const LocalStorage = (props) => {
-  useEffect(() => {
-    const savedStorageItems =
-      JSON.parse(localStorage.getItem('expenses')) || [];
-    const savedTheme = JSON.parse(localStorage.getItem('theme'));
-    const save = JSON.parse(localStorage.getItem('save'));
+  const savedStorageItems = JSON.parse(localStorage.getItem('expenses')) || [];
+  const savedTheme = JSON.parse(localStorage.getItem('theme'));
+  const save = JSON.parse(localStorage.getItem('expenses'));
 
+  useEffect(() => {
     switch (save) {
       //Do not save in local storage
       case '1':
-        props.setSaveLocalStorage('1');
+        props.setSave('1');
         break;
       //Save in local storage
       case '0':
-        props.setSaveLocalStorage('0');
+        props.setSave('0');
         break;
       default:
     }

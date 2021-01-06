@@ -24,15 +24,16 @@ const LocalStorage = (props) => {
       case '1':
         if (JSON.parse(localStorage.getItem('save')) === '0') {
           props.setTheme('1');
-          break;
         }
+        break;
       //Light Theme
       case '0':
         if (JSON.parse(localStorage.getItem('save')) === '0') {
           props.setTheme('0');
-          break;
         }
+        break;
       default:
+        return;
     }
 
     if (savedStorageItems.length > 0) {

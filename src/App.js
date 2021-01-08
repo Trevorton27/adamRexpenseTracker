@@ -12,7 +12,6 @@ function App() {
   const [theme, setTheme] = useState('0');
   const [show, setShow] = useState(false);
   const [saveLocalStorage, setSaveLocalStorage] = useState('0');
-  const [save, setSave] = useState('0');
 
   useEffect(() => {
     if (theme === '1') {
@@ -57,8 +56,6 @@ function App() {
         setExpenses={setExpenses}
         theme={theme}
         setTheme={setTheme}
-        save={save}
-        setSave={setSave}
       />
       <Navbar show={show} setShow={setShow} />
       <header>
@@ -67,8 +64,8 @@ function App() {
       <InputForm
         expenses={expenses}
         setExpenses={setExpenses}
-        saveLocalStorage={saveLocalStorage}
-        setSaveLocalStorage={setSaveLocalStorage}
+        /* saveLocalStorage={saveLocalStorage}
+        setSaveLocalStorage={setSaveLocalStorage}*/
       />
       <SettingsModal
         show={show}

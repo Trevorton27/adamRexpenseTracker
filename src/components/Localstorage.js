@@ -9,11 +9,11 @@ const LocalStorage = (props) => {
     switch (save) {
       //Do not save in local storage
       case '1':
-        props.setSave('1');
+        props.setSaveLocalStorage('1');
         break;
       //Save in local storage
       case '0':
-        props.setSave('0');
+        props.setSaveLocalStorage('0');
         break;
       default:
     }

@@ -162,3 +162,11 @@ select {
   /* border: 0 !important; */
   background-image: none;
 }
+
+.settingsMenuItem {
+  color: #fff;
+  cursor: pointer;
+  margin-left: 3em;
+  font-size: 30px;
+  margin-top: 0.5em;
+}

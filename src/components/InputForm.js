@@ -49,12 +49,12 @@ const InputForm = (props) => {
     props.setExpenses([
       ...props.expenses,
       {
+        id: Math.random(),
         expenseType: expenseType,
         location: location,
         item: item,
         expenseDate: expenseDate,
-        dollarAmount: dollarAmount,
-        id: Math.random() * 1000
+        dollarAmount: dollarAmount
       }
     ]);
   };

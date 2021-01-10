@@ -54,7 +54,7 @@ const InputForm = (props) => {
         item: item,
         expenseDate: expenseDate,
         dollarAmount: dollarAmount,
-        id: Math.random() * 1000
+        id: Math.random()
       }
     ]);
   };

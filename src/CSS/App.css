@@ -162,3 +162,29 @@ select {
   /* border: 0 !important; */
   background-image: none;
 }
+
+.dark {
+  --theme-color-navbar: #3a005b;
+  --theme-color-navbar-text: #ffffff;
+  --theme-color-navbar-burger: #ffffff;
+  --app-theme-color-text: #ffffff;
+  --app-theme-color-back: #383838;
+  --app-theme-color-back-secondary: #383838;
+
+  --app-theme-color-table-row-1: #ababab;
+  --app-theme-color-table-row-2: #2d2d2d;
+
+  --app-theme-color-table-button: #ddb244;
+}
+
+.light {
+  --theme-color-navbar: #96151d;
+  --theme-color-navbar-text: #000000;
+  --theme-color-navbar-burger: #000000;
+  --app-theme-color-text: #3f3f3f;
+  --app-theme-color-back: #ededed;
+  --app-theme-color-back-secondary: #ededed;
+  --app-theme-color-table-row-1: #eaeaea;
+  --app-theme-color-table-row-2: #f9fafa;
+  --app-theme-color-table-button: #22a1db;
+}

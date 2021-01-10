@@ -9,7 +9,7 @@ const Expense = (props) => {
   };
 
   return (
-    <tr key={props.expense.id}>
+    <tr>
       <td>{props.expense.expenseDate}</td>
       <td>${props.expense.dollarAmount}</td>
       <td>{props.expense.item}</td>

@@ -6,16 +6,19 @@ const ExpenseList = (props) => {
     <div className='expense-container'>
       <table className='table' id='expense-table'>
         <thead>
-          <th>Date</th>
-          <th>Amount</th>
-          <th>Item</th>
-          <th>Location</th>
-          <th>Type</th>
-          <th>Remove</th>
+          <tr>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Item</th>
+            <th>Location</th>
+            <th>Type</th>
+            <th>Remove</th>
+          </tr>
         </thead>
         <tbody>
           {props.expenses.map((expense) => (
             <Expense
+              key={expense.id}
               expense={expense}
               expenses={props.expenses}
               setExpenses={props.setExpenses}

@@ -1,81 +1,84 @@
 import React from 'react';
-import { Modal, Button, ButtonGroup, ToggleButton } from 'react-bootstrap';
+import {
+  Modal,
+  Button,
+  ToggleButton,
+  ToggleButtonGroup
+} from 'react-bootstrap';
 
 const SettingsModal = ({
   show,
   setShow,
-  theme,
-  setTheme,
+  isDarkMode,
+  setIsDarkMode,
   saveLocalStorage,
   setSaveLocalStorage
 }) => {
-  const themeValues = [
-    { name: 'Light Mode', value: '0' },
-    { name: 'Dark Mode', value: '1' }
-  ];
-  const storageValues = [
-    { name: 'Save Expenses', value: '0' },
-    { name: 'No Save', value: '1' }
-  ];
-
-  function themeChange(e) {
-    setTheme(e.currentTarget.value);
-  }
-
-  function storageChange(e) {
-    setSaveLocalStorage(e.currentTarget.value);
-  }
-
-  const handleClose = () => setShow(false);
-
   return (
     <Modal show={show}>
       <Modal.Header>
         <Modal.Title>Settings</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <ButtonGroup>
-          {themeValues.map((themeValue, idx1) => (
+        <ToggleButtonGroup
+          name='save-theme-mode-buttons'
+          onChange={(value) => setIsDarkMode(value === 'dark-mode')}
+          value={isDarkMode ? 'dark-mode' : 'light-mode'}
+        >
+          <ToggleButton
+            className='radiobuttons'
+            variant='link'
+            type='radio'
+            name='dark-mode'
+            checked='dark-mode'
+            value='dark-mode'
+          >
+            Dark Mode
+          </ToggleButton>
+          <ToggleButton
+            className='radiobuttons'
+            variant='link'
+            type='radio'
+            name='light-mode'
+            checked='light-mode'
+            value='light-mode'
+          >
+            Light Mode
+          </ToggleButton>
+        </ToggleButtonGroup>
+        <div>
+          <ToggleButtonGroup
+            name='save-expenses-toggle-buttons'
+            onChange={(value) => setSaveLocalStorage(value === 'save')}
+            value={saveLocalStorage ? 'save' : 'no-save'}
+          >
             <ToggleButton
               className='radiobuttons'
               variant='link'
-              key={idx1}
               type='radio'
-              name='radio'
-              value={themeValue.value}
-              checked={theme === themeValue.value}
-              onChange={themeChange}
+              name='save'
+              value='save'
             >
-              {themeValue.name}
+              Save
             </ToggleButton>
-          ))}
-        </ButtonGroup>
-        <div>
-          <ButtonGroup>
-            {storageValues.map((storageValue, idx2) => (
-              <ToggleButton
-                className='radiobuttons'
-                variant='link'
-                key={idx2}
-                type='radio'
-                name='storage'
-                value={storageValue.value}
-                checked={saveLocalStorage === storageValue.value}
-                onChange={storageChange}
-              >
-                {storageValue.name}
-              </ToggleButton>
-            ))}
-          </ButtonGroup>
+            <ToggleButton
+              className='radiobuttons'
+              variant='link'
+              type='radio'
+              name='no-save'
+              value='no-save'
+            >
+              No Save
+            </ToggleButton>
+          </ToggleButtonGroup>
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant='primary' onClick={handleClose}>
+        <Button variant='primary' onClick={setShow(false)}>
           Close
         </Button>
       </Modal.Footer>
     </Modal>
   );
 };
-
 export default SettingsModal;

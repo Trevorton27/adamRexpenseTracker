@@ -14,6 +14,7 @@ const SettingsModal = ({
   saveLocalStorage,
   setSaveLocalStorage
 }) => {
+  console.log(' settings modal props.show ', show);
   return (
     <Modal show={show}>
       <Modal.Header>
@@ -74,11 +75,17 @@ const SettingsModal = ({
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant='primary' onClick={setShow(false)}>
+        <Button
+          variant='primary'
+          onClick={() => {
+            setShow(false);
+          }}
+        >
           Close
         </Button>
       </Modal.Footer>
     </Modal>
   );
 };
+
 export default SettingsModal;

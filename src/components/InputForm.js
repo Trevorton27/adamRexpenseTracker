@@ -10,14 +10,6 @@ const InputForm = (props) => {
   const [expenseDate, setExpenseDate] = useState('');
   const [item, setItem] = useState('');
 
-  const getTodaysDate = () => {
-    let today = new Date();
-    let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    let yyyy = today.getFullYear();
-    return yyyy + '-' + mm + '-' + dd;
-  };
-
   //Expense Type
   const selectExpenseTypeHandler = (e) => {
     setExpenseType(e.target.value);
@@ -43,9 +35,6 @@ const InputForm = (props) => {
   const submitExpenseHandler = (e) => {
     e.preventDefault();
 
-    if (expenseDate === '') {
-      setExpenseDate(getTodaysDate);
-    }
     props.setExpenses([
       ...props.expenses,
       {
@@ -57,6 +46,7 @@ const InputForm = (props) => {
         id: Math.random()
       }
     ]);
+    e.target.reset();
   };
 
   return (
@@ -101,6 +91,7 @@ const InputForm = (props) => {
               type='date'
               onChange={inputExpenseDateHandler}
               className='input-expense form-control'
+              required
             />
           </Form.Group>
           <Form.Group md='6'>

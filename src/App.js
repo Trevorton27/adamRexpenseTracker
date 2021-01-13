@@ -10,7 +10,6 @@ function App() {
   const [show, setShow] = useState(false);
   const [saveLocalStorage, setSaveLocalStorage] = useState(true);
 
-  console.log('show ', show);
   useEffect(() => {
     const isSavingToLocalStorage =
       JSON.parse(localStorage.getItem('save')) || false;

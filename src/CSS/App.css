@@ -162,7 +162,6 @@ select {
   /* border: 0 !important; */
   background-image: none;
 }
-
 .dark {
   --theme-color-navbar: #3a005b;
   --theme-color-navbar-text: #ffffff;

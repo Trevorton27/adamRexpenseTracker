@@ -14,8 +14,14 @@ function App() {
     const isSavingToLocalStorage =
       JSON.parse(localStorage.getItem('save')) || false;
     setSaveLocalStorage(isSavingToLocalStorage);
+  }, []);
+
+  useEffect(() => {
     const isDarkMode = JSON.parse(localStorage.getItem('theme')) || false;
     setIsDarkMode(isDarkMode);
+  }, []);
+
+  useEffect(() => {
     const savedExpenses = JSON.parse(localStorage.getItem('expenses')) || [];
     setExpenses(savedExpenses);
   }, []);
@@ -31,6 +37,10 @@ function App() {
       localStorage.setItem('theme', JSON.stringify(isDarkMode));
     }
   }, [isDarkMode, saveLocalStorage]);
+
+  useEffect(() => {
+    localStorage.setItem('save', JSON.stringify(saveLocalStorage));
+  }, [saveLocalStorage]);
 
   return (
     <div className={`App ${isDarkMode ? 'dark' : 'light'}`}>
